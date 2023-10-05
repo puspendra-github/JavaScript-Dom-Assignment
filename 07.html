@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+           
+            width: 100vw;
+            overflow: hidden;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="search" id="search" placeholder="Search for items" onkeyup="myFunction()">
+
+
+    <p>Results:</p>
+    <ul id="myUL">
+        <li><a href="#"> HTML </a></li>
+        <li><a href="#"> CSS </a></li>
+        <li><a href="#"> GITHUB </a></li>
+        <li><a href="#"> TAilWIND CSS </a></li>
+        <li><a href="#"> JAVASCRIPT </a>t</li>
+    </ul>
+
+    <script>
+        function myFunction(){
+            let txtValue;
+            let input = document.getElementById("search");
+            let filter = input.value.toUpperCase();
+
+            let ul= document.getElementById('myUL')
+            let li= ul.getElementsByTagName('li');
+
+            for(i=0;i<li.length;i++){
+                a=li[i].getElementsByTagName('a')[0];
+                txtValue = a.textContent || a.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    li[i].style.display = "";
+                }
+                else{
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+</body>
+</html>

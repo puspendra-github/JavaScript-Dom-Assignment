@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="heading"></h1>
+
+        <button id="button" onclick="image()"> Toggle Image</button>
+        <br>
+        <br>
+        <img src="/cute-krishna-with-cow-image-generative-ai-free-photo.jpg" alt="" style="width: 500px; height: 400px;" id="imgk">
+
+        
+
+    </div>
+
+    <script>
+
+        const heading = document.getElementById('heading')
+
+        heading.innerText="Your Image is visible."
+
+        function image(){
+            const image = document.getElementById("imgk")
+            if(image.style.opacity==100){
+                image.style.opacity=0;
+                heading.innerText="Your image is not visible"
+            }
+            else{
+                image.style.opacity=100;
+                heading.innerText="Your Image is visible."
+            }
+        }
+    
+
+    </script>
+
+
+
+</body>
+</html>

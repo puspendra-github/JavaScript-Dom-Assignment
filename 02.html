@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            align-items: center;
+            
+        
+        }
+        #myElement {
+            width: 900px;
+            height: 600px;
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+        #myElement>#button{
+            
+            
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="myElement">
+        <h1 id="heading">This is Light Mode</h1>
+        <button onchange="myFun" id="button" >Toggle Theme</button>
+    </div>
+
+    <script>
+        const myButton = document.querySelector('#button')
+        var element = document.getElementById("myElement");
+        
+        const changeText = document.querySelector("#heading")
+
+        
+        myButton.addEventListener('click', function(){
+            element.style.backgroundColor = "black";
+            changeText.textContent = "This is Dark Mode";
+
+            changeText.style.color= 'white'
+        })
+
+    </script>
+
+</body>
+</html>

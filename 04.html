@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vh;
+            display: flex;
+            overflow: hidden;
+            margin:200px auto;
+            
+        }
+        #form{
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+            text-align: center;
+            /* padding: 50px; */
+        }
+        #form>*{
+            margin: 5px;
+        }
+
+        #input>*{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm" onsubmit="validateAndSubmit(event)">
+    <div id="form" onsubmit="validateAndSubmit(event)">
+    <h1>Sign up form</h1>
+    <div id="input">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Minimum 3 character long">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"placeholder="Minimum 8 characters">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" >
+        
+
+        
+    </div>
+    <button type="submit" id="submit">Submit</button>
+    </div>
+</form>
+    <script>
+        function validateAndSubmit(event){
+            event.preventDefault()
+            console.log("Entered")
+            const name= document.getElementById('name')
+            const email= document.getElementById('email')
+            const password= document.getElementById('password')
+            if(name.value.length >=3 && password.value.length >=8 ){
+                alert("Validation Successful !!")
+            }
+            else{
+                alert("Validation failed !!")
+            }
+        }
+    </script>
+
+
+</body>
+</html>

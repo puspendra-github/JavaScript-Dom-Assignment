@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="heading"></span>
+    <select name="options" id="dropDown" onchange="selectOption()">
+        <option value="javascript">Javascript</option>
+        <option value="Html">Html</option>
+        <option value="CSS">CSS</option>
+    </select>
+
+    <div id="output">The selected value is _______</div>
+
+    <script>
+        let output = document.getElementById('output')
+        const headingEle = document.getElementById("heading")
+        headingEle.innerText="Which is your favorite language"
+
+        function selectOption(){
+            let dropDown = document.getElementById("dropDown")
+
+        let selectedIndex = dropDown.selectedIndex;
+
+        let selectedValue = dropDown.options[selectedIndex].text;
+
+        output.innerHTML= "The selected value is "  + selectedValue;
+
+        }
+    </script>
+</body>
+</html>
